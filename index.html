@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0,
+maximum-scale=1.0, user-scalable=no">
+
+<title>NAKUL SHARMA</title>
+
+<style>
+
+/* =========================
+   RESET
+========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,
+body{
+    width:100%;
+    height:100%;
+    overflow:hidden;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:#f5f3ef;
+    color:#242229;
+    -webkit-text-size-adjust:100%;
+}
+
+
+/* =========================
+   MAIN INTRO
+========================= */
+
+.intro{
+    position:fixed;
+    inset:0;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    text-align:center;
+
+    overflow:hidden;
+
+    background:
+        radial-gradient(
+            circle at 20% 20%,
+            rgba(166,139,101,.13),
+            transparent 30%
+        ),
+
+        radial-gradient(
+            circle at 80% 75%,
+            rgba(104,132,137,.13),
+            transparent 32%
+        ),
+
+        linear-gradient(
+            135deg,
+            #faf9f6,
+            #efede8
+        );
+
+    animation:exit 1.2s ease 7.5s forwards;
+}
+
+
+/* =========================
+   SOFT LIGHT
+========================= */
+
+.intro::before{
+    content:"";
+
+    position:absolute;
+
+    width:55vw;
+    height:55vw;
+
+    max-width:650px;
+    max-height:650px;
+
+    border-radius:50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255,255,255,.8),
+            transparent 68%
+        );
+
+    filter:blur(25px);
+
+    animation:breathe 5s ease-in-out infinite;
+}
+
+
+/* =========================
+   CONTENT
+========================= */
+
+.content{
+    position:relative;
+
+    z-index:2;
+
+    width:92%;
+    max-width:850px;
+
+    animation:
+        cinematic
+        2s
+        cubic-bezier(.16,1,.3,1);
+}
+
+
+/* =========================
+   STUDIO TEXT
+========================= */
+
+.studio{
+    font-size:clamp(9px,1.3vw,13px);
+
+    letter-spacing:
+        clamp(3px,.65vw,7px);
+
+    color:#77727a;
+
+    text-transform:uppercase;
+
+    opacity:0;
+
+    animation:
+        fadeUp
+        1.2s
+        ease
+        .5s
+        forwards;
+}
+
+
+/* =========================
+   NAME
+========================= */
+
+.name{
+    margin-top:20px;
+
+    font-size:
+        clamp(43px,8vw,92px);
+
+    line-height:1;
+
+    font-weight:800;
+
+    letter-spacing:
+        clamp(2px,.8vw,10px);
+
+    white-space:nowrap;
+
+    background:
+        linear-gradient(
+            110deg,
+            #806c8b,
+            #3f5660,
+            #b39b72,
+            #6c7f82,
+            #806c8b
+        );
+
+    background-size:300%;
+
+    -webkit-background-clip:text;
+    background-clip:text;
+
+    color:transparent;
+
+    opacity:0;
+
+    animation:
+        fadeUp 1.5s ease .9s forwards,
+        gradient 6s linear 2s infinite;
+}
+
+
+/* =========================
+   DIVIDER
+========================= */
+
+.line{
+    width:0;
+
+    height:1px;
+
+    margin:30px auto;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            #8d7c91,
+            #9b8c6c,
+            transparent
+        );
+
+    animation:
+        lineGrow
+        1.4s
+        ease
+        2s
+        forwards;
+}
+
+
+/* =========================
+   DESCRIPTION
+========================= */
+
+.description{
+    width:min(700px,100%);
+
+    margin:auto;
+
+    font-size:
+        clamp(13px,1.7vw,18px);
+
+    line-height:1.8;
+
+    color:#5f5a62;
+
+    opacity:0;
+
+    animation:
+        fadeUp
+        1.4s
+        ease
+        2.4s
+        forwards;
+}
+
+
+/* =========================
+   HIGHLIGHT
+========================= */
+
+.highlight{
+    color:#685678;
+
+    font-weight:600;
+}
+
+
+/* =========================
+   ROVIO CREDIT
+========================= */
+
+.collab{
+    margin-top:25px;
+
+    font-size:
+        clamp(9px,1.2vw,12px);
+
+    letter-spacing:
+        clamp(2px,.5vw,5px);
+
+    color:#777078;
+
+    text-transform:uppercase;
+
+    opacity:0;
+
+    animation:
+        fadeUp
+        1.2s
+        ease
+        3.2s
+        forwards;
+}
+
+
+/* =========================
+   COPYRIGHT
+========================= */
+
+.copyright{
+    margin-top:18px;
+
+    font-size:
+        clamp(8px,1vw,11px);
+
+    letter-spacing:
+        clamp(1px,.3vw,3px);
+
+    color:#98939a;
+
+    text-transform:uppercase;
+
+    opacity:0;
+
+    animation:
+        fadeUp
+        1.2s
+        ease
+        3.6s
+        forwards;
+}
+
+
+/* =========================
+   ENJOY
+========================= */
+
+.enjoy{
+    margin-top:38px;
+
+    font-size:
+        clamp(10px,1.3vw,13px);
+
+    letter-spacing:
+        clamp(3px,.7vw,7px);
+
+    color:#627b78;
+
+    text-transform:uppercase;
+
+    opacity:0;
+
+    animation:
+        fadeUp
+        1.3s
+        ease
+        4.2s
+        forwards,
+
+        glow
+        3s
+        ease-in-out
+        5s
+        infinite
+        alternate;
+}
+
+
+/* =========================
+   LOADING
+========================= */
+
+.loading{
+    position:absolute;
+
+    bottom:27px;
+
+    width:100%;
+
+    font-size:8px;
+
+    letter-spacing:3px;
+
+    color:#aaa5aa;
+
+    opacity:0;
+
+    animation:
+        fadeUp
+        1s
+        ease
+        5s
+        forwards;
+}
+
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+@keyframes cinematic{
+
+    from{
+        transform:scale(1.12);
+        filter:blur(14px);
+    }
+
+    to{
+        transform:scale(1);
+        filter:blur(0);
+    }
+
+}
+
+
+@keyframes fadeUp{
+
+    from{
+        opacity:0;
+        transform:translateY(22px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+
+@keyframes lineGrow{
+
+    from{
+        width:0;
+    }
+
+    to{
+        width:min(520px,65%);
+    }
+
+}
+
+
+@keyframes gradient{
+
+    from{
+        background-position:0%;
+    }
+
+    to{
+        background-position:300%;
+    }
+
+}
+
+
+@keyframes breathe{
+
+    0%,
+    100%{
+        transform:scale(.9);
+        opacity:.5;
+    }
+
+    50%{
+        transform:scale(1.12);
+        opacity:1;
+    }
+
+}
+
+
+@keyframes glow{
+
+    from{
+        text-shadow:
+            0 0 0
+            rgba(98,123,120,0);
+    }
+
+    to{
+        text-shadow:
+            0 0 16px
+            rgba(98,123,120,.25);
+    }
+
+}
+
+
+@keyframes exit{
+
+    to{
+        opacity:0;
+        visibility:hidden;
+    }
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:600px){
+
+    .content{
+        width:94%;
+    }
+
+
+    .name{
+        font-size:11vw;
+        letter-spacing:2px;
+    }
+
+
+    .description{
+        font-size:13px;
+        line-height:1.7;
+    }
+
+
+    .collab{
+        font-size:8px;
+        letter-spacing:2px;
+    }
+
+
+    .copyright{
+        font-size:7px;
+        letter-spacing:1.5px;
+    }
+
+
+    .enjoy{
+        margin-top:28px;
+        letter-spacing:3px;
+    }
+
+}
+
+
+/* =========================
+   SMALL PHONES
+========================= */
+
+@media(max-width:380px){
+
+    .name{
+        font-size:10vw;
+    }
+
+
+    .description{
+        font-size:12px;
+    }
+
+
+    .studio{
+        font-size:8px;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     CINEMATIC INTRO
+========================= -->
+
+<div class="intro">
+
+    <div class="content">
+
+        <!-- Production -->
+        <div class="studio">
+            A NAKUL SHARMA PRODUCTION
+        </div>
+
+
+        <!-- Main Name -->
+        <div class="name">
+            NAKUL SHARMA
+        </div>
+
+
+        <!-- Divider -->
+        <div class="line"></div>
+
+
+        <!-- Ownership -->
+        <div class="description">
+
+            All game content, development
+            and production are created and
+            presented by
+
+            <span class="highlight">
+                NAKUL SHARMA
+            </span>.
+
+            <br><br>
+
+            Unauthorized copying,
+            redistribution or reproduction
+            of this material may result
+            in legal action.
+
+        </div>
+
+
+        <!-- Rovio Credit -->
+        <div class="collab">
+            Inspired by Rovio Entertainment
+        </div>
+
+
+        <!-- Copyright -->
+        <div class="copyright">
+            © 2023 NAKUL SHARMA · ALL RIGHTS RESERVED
+        </div>
+
+
+        <!-- Final Message -->
+        <div class="enjoy">
+            Enjoy the experience
+        </div>
+
+    </div>
+
+
+    <!-- Loading Text -->
+    <div class="loading">
+        PREPARING EXPERIENCE
+    </div>
+
+</div>
+
+
+<!-- =========================
+     REDIRECT
+========================= -->
+
+<script>
+
+setTimeout(function(){
+
+    window.location.replace("game.html");
+
+},8500);
+
+</script>
+
+
+</body>
+</html>
